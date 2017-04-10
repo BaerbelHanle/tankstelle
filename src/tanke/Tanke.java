@@ -12,6 +12,8 @@ public class Tanke {
         simulation.ticken(3600);
         simulation.footer();
         simulation.output();
+        //one more staff
+
         
     }
     
