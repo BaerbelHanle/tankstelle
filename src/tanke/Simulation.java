@@ -21,7 +21,11 @@ public class Simulation {
             
             tick++;
 
-            autoKommt();
+            double r = Math.random();
+            if (r < 1 / (double)Parameter.abstandAutos) {
+                autoKommt();
+            }
+
             startTanken();
             endTanken();
             startZahlen();
@@ -39,19 +43,18 @@ public class Simulation {
     }
 
     private void autoKommt() {
-        double r = Math.random();
-        if (r < 1 / (double)Parameter.abstandAutos) {
-            Auto auto = new Auto(tick);
-            auto.setStatus("an Zapfsaeule Warten");
-            if (zapfsaeulen.get(0).laenge() <= zapfsaeulen.get(1).laenge() &&
-                    zapfsaeulen.get(0).laenge() <= zapfsaeulen.get(2).laenge()) {
-                zapfsaeulen.get(0).addAuto(auto);
-            } else if (zapfsaeulen.get(1).laenge() <= zapfsaeulen.get(2).laenge()) {
-                zapfsaeulen.get(1).addAuto(auto);
-            } else {
-                zapfsaeulen.get(2).addAuto(auto);
-            }
+
+        Auto auto = new Auto(tick);
+        auto.setStatus("an Zapfsaeule Warten");
+        if (zapfsaeulen.get(0).laenge() <= zapfsaeulen.get(1).laenge() &&
+                zapfsaeulen.get(0).laenge() <= zapfsaeulen.get(2).laenge()) {
+            zapfsaeulen.get(0).addAuto(auto);
+        } else if (zapfsaeulen.get(1).laenge() <= zapfsaeulen.get(2).laenge()) {
+            zapfsaeulen.get(1).addAuto(auto);
+        } else {
+            zapfsaeulen.get(2).addAuto(auto);
         }
+
     }
 
     private void startTanken() {
