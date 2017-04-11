@@ -12,6 +12,7 @@ public class Auto {
 
     /**
      * Konstruktor fuer die Klasse Auto.
+     *
      * @param aktuelleZeit Zeit der Erzeugung des Autos
      */
     public Auto(int aktuelleZeit) {
@@ -21,6 +22,7 @@ public class Auto {
 
     /**
      * Set-Methode fuer statusZeit.
+     *
      * @param aktuelleZeit
      */
     public void setStatusZeit(int aktuelleZeit) {
@@ -36,6 +38,7 @@ public class Auto {
 
     /**
      * Get-Methode fuer statusZeit.
+     *
      * @return statusZeit
      */
     public int getStatusZeit() {
@@ -44,6 +47,7 @@ public class Auto {
 
     /**
      * Get-Methode fuer status.
+     *
      * @return status
      */
     public String getStatus() {
@@ -52,6 +56,7 @@ public class Auto {
 
     /**
      * Get-Methode fuer tankZeit.
+     *
      * @return tankZeit
      */
     public int getTankZeit() {
@@ -60,6 +65,7 @@ public class Auto {
 
     /**
      * Get-Methode fuer zahlZeit.
+     *
      * @return zahlZeit
      */
     public int getZahlZeit() {
@@ -68,6 +74,7 @@ public class Auto {
 
     /**
      * Get-Methode fuer raeumZeit.
+     *
      * @return raeumZeit
      */
     public int getRaeumZeit() {
