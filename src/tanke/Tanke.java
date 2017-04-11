@@ -13,8 +13,10 @@ public class Tanke {
         simulation.footer();
         simulation.output();
         //one more staff
+        double r = Math.random();
 
-        
+        System.out.println("---------------------------------");
+
     }
     
 }
