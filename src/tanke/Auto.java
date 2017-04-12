@@ -14,7 +14,7 @@ public class Auto {
      * Konstruktor fuer die Klasse Auto.
      *
      * @param aktuelleZeit Zeit der Erzeugung des Autos
-     * @param parameter Parameter zum Festlegen der tankZeit, zahlZeit und raeumZeit
+     * @param parameter    Parameter zum Festlegen der tankZeit, zahlZeit und raeumZeit
      */
     public Auto(int aktuelleZeit, Parameter parameter) {
         statusZeit = aktuelleZeit;
