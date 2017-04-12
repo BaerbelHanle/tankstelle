@@ -14,14 +14,16 @@ public class Simulation {
     private int tick = 0;
     // Zeit fuer die Protokollausgabe
     private int takt = 0;
+    private Parameter parameter = new Parameter();
 
     /**
      * Konstruktor fuer die Klasse Simulation.
      */
-    public Simulation() {
+    public Simulation(Parameter parameter) {
         zapfsaeulen.add(new Schlange());
         zapfsaeulen.add(new Schlange());
         zapfsaeulen.add(new Schlange());
+        this.parameter = parameter;
     }
 
     /**
@@ -33,17 +35,15 @@ public class Simulation {
      * <li> Bezahlung an den Kassen</li>
      * <li> Ausgabe des Protokolls</li>
      * </ul>
-     *
-     * @param simulationszeit
      */
-    public void ticken(int simulationszeit) {
+    public void ticken() {
 
-        for (int i = 0; i < simulationszeit; i++) {
+        for (int i = 0; i < parameter.getSimulationszeit(); i++) {
 
             tick++;
 
             double r = Math.random();
-            if (r < 1 / (double) Parameter.abstandAutos) {
+            if (r < 1 / (double) parameter.getAbstandAutos()) {
                 autoKommt();
             }
 
@@ -53,13 +53,13 @@ public class Simulation {
             endZahlen();
             end();
 
-            if ((i / 300) * 300 == i) {
+            if (i % parameter.getProtokolltakt() == 0) {
                 takt = i / 60;
                 protokollErweitern();
             }
         }
 
-        takt = simulationszeit / 60;
+        takt = parameter.getSimulationszeit() / 60;
         protokollErweitern();
     }
 
