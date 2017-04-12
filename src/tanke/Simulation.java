@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Die Haupklasse des Programms, quasi ein Universum, in der sich die Tankstelle befindet.
  * Sie enthaelt drei Zapfsaeulen, eine Kasse, einen Sekundenzaehler und einen Taktzaehler,
  * der den Takt der Ausgabe des Protokolls angibt. In dieser Klasse findet Tanken, Bezahlen
- * und Ausraeumen der Autos an der Tankstelle statt.
+ * und Raeumen der Autos an der Tankstelle statt.
  */
 public class Simulation {
     private ArrayList<Schlange> zapfsaeulen = new ArrayList<>();

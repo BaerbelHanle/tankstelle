@@ -40,7 +40,7 @@ public class Parameter {
         return zeitRaeumenMax;
     }
 
-    public double getAbstandAutos() {
+    public int getAbstandAutos() {
         return abstandAutos;
     }
 
