@@ -68,7 +68,7 @@ public class Simulation {
      */
     private void autoKommt() {
 
-        Auto auto = new Auto(tick);
+        Auto auto = new Auto(tick, parameter);
         auto.setStatus("an Zapfsaeule Warten");
         if (zapfsaeulen.get(0).laenge() <= zapfsaeulen.get(1).laenge() &&
                 zapfsaeulen.get(0).laenge() <= zapfsaeulen.get(2).laenge()) {

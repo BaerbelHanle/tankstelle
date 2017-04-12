@@ -36,7 +36,7 @@ public class Tanke {
         System.out.println("Geben Sie die Zeit in Sekunden an, die ein Fahrer hoechstens zum Raeumen der Tankstelle braucht");
         parameter.setZeitRaeumenMin(scan.nextInt());
 
-        System.out.println("Geben Sie den durchschnittlichen Zeitabstand in Seunden an, in dem ein neues Ato ankommen soll");
+        System.out.println("Geben Sie den durchschnittlichen Zeitabstand in Sekunden an, in dem ein neues Auto ankommen soll");
         parameter.setAbstandAutos(scan.nextInt());
 
         System.out.println("Geben Sie die Zeit in Sekunden an, ueber die Sie den Ablauf simulieren lassen wollen");

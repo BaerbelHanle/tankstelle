@@ -6,17 +6,21 @@ package tanke;
 public class Auto {
     private String status = "an Zapfsaeule Warten"; // an Zapfsaeule Warten , Tanken, an Kasse Warten, Zahlen, Raeumen der Tankstelle
     private int statusZeit;
-    private int tankZeit = (int) Math.random() * (Parameter.zeitTankenMax - Parameter.zeitTankenMin + 1) + Parameter.zeitTankenMin;
-    private int zahlZeit = (int) Math.random() * (Parameter.zeitZahlenMax - Parameter.zeitZahlenMin + 1) + Parameter.zeitZahlenMin;
-    private int raeumZeit = (int) Math.random() * (Parameter.zeitRaeumenMax - Parameter.zeitRaeumenMin + 1) + Parameter.zeitRaeumenMin;
+    private int tankZeit;
+    private int zahlZeit;
+    private int raeumZeit;
 
     /**
      * Konstruktor fuer die Klasse Auto.
      *
      * @param aktuelleZeit Zeit der Erzeugung des Autos
+     * @param parameter Parameter zum Festlegen der tankZeit, zahlZeit und raeumZeit
      */
-    public Auto(int aktuelleZeit) {
+    public Auto(int aktuelleZeit, Parameter parameter) {
         statusZeit = aktuelleZeit;
+        tankZeit = (int) (Math.random() * (parameter.getZeitTankenMax() - parameter.getZeitTankenMin()) + parameter.getZeitTankenMin());
+        zahlZeit = (int) (Math.random() * (parameter.getZeitZahlenMax() - parameter.getZeitZahlenMin()) + parameter.getZeitZahlenMin());
+        raeumZeit = (int) (Math.random() * (parameter.getZeitRaeumenMax() - parameter.getZeitRaeumenMin()) + parameter.getZeitRaeumenMin());
 
     }
 
