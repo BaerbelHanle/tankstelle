@@ -9,11 +9,25 @@ import java.util.ArrayList;
  * und Raeumen der Autos an der Tankstelle statt.
  */
 public class Simulation {
+    /**
+     * Zapfsaeulen der Tankstelle.
+     */
     private ArrayList<Schlange> zapfsaeulen = new ArrayList<>();
+    /**
+     * Kasse der Tankstelle.
+     */
     private Schlange kasse = new Schlange();
+    /**
+     * Aktuelle Zeit, in der die Simulation laeuft (Sekunden).
+     */
     private int tick = 0;
-    // Zeit fuer die Protokollausgabe
+    /**
+     * Zeit fuer die Protokollausgabe.
+     */
     private int takt = 0;
+    /**
+     * Parameter, die fuer die Simulation gebraucht werden.
+     */
     private Parameter parameter = new Parameter();
 
     /**
@@ -61,6 +75,12 @@ public class Simulation {
 
         takt = parameter.getSimulationszeit() / 60;
         protokollErweitern();
+
+        for(Schlange zapfsaeule : zapfsaeulen){
+            zapfsaeule.wartezeitenEinsammelnZapfsaeulen(tick);
+        }
+
+        kasse.wartezeitenEinsammelnKasse(tick);
     }
 
     /**
@@ -158,6 +178,8 @@ public class Simulation {
         }
 
     }
+
+
 
     /**
      * Druckt den Header fuer die Protokoll-Tabelle.

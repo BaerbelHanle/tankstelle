@@ -4,10 +4,25 @@ package tanke;
  * Simuliert ein Auto. Ein Auto ist gleich mit dem Autofahrer (z.B. an der Kasse) assoziiert.
  */
 public class Auto {
-    private String status = "an Zapfsaeule Warten"; // an Zapfsaeule Warten , Tanken, an Kasse Warten, Zahlen, Raeumen der Tankstelle
+    /**
+     * Status des Autos: an Zapfsaeule Warten , Tanken, an Kasse Warten, Zahlen, Raeumen der Tankstelle.
+     */
+    private String  status;
+    /**
+     * Zeit, in der Status geändert wurde.
+     */
     private int statusZeit;
+    /**
+     * Zeit, die Auto fuers Tanken braucht.
+     */
     private int tankZeit;
+    /**
+     * Zeit, die Autofahrer zum Bezahlen braucht.
+     */
     private int zahlZeit;
+    /**
+     * Zeit, die Autofahrer zum Raeumen braucht.
+     */
     private int raeumZeit;
 
     /**
@@ -17,6 +32,7 @@ public class Auto {
      * @param parameter    Parameter zum Festlegen der tankZeit, zahlZeit und raeumZeit
      */
     public Auto(int aktuelleZeit, Parameter parameter) {
+        status = "an Zapfsaeule Warten";
         statusZeit = aktuelleZeit;
         tankZeit = (int) (Math.random() * (parameter.getZeitTankenMax() - parameter.getZeitTankenMin()) + parameter.getZeitTankenMin());
         zahlZeit = (int) (Math.random() * (parameter.getZeitZahlenMax() - parameter.getZeitZahlenMin()) + parameter.getZeitZahlenMin());
